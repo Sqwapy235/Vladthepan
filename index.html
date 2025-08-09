@@ -47,6 +47,27 @@
 form.contact{display:grid;gap:10px} input[type=text],input[type=email],textarea{border:3px solid var(--border);padding:10px;font-size:14px;background:#d7f4d0}
 textarea{min-height:120px;resize:vertical} .notice{font-size:12px;color:#123;opacity:.8}
 @media (max-width:800px){.hero{grid-template-columns:1fr} .grid2{grid-template-columns:1fr} .tabs{flex-wrap:wrap} }
+
+/* Fix bold glyphs for Minecraft font on iOS */
+b, strong { font-weight: 400; text-decoration: underline; }
+/* 3D stability tweaks */
+.face { backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform; }
+.head3d { transform-style: preserve-3d; -webkit-transform-style: preserve-3d; }
+/* Mobile layout tweaks */
+@media (max-width: 800px){
+  .header { flex-wrap: wrap; gap: 8px; }
+  .tabs { width: 100%; justify-content: center; }
+  .stage { height: 260px; }
+  .cube, .face { width: 96px; height: 96px; }
+  .f-front{ transform: translateZ(48px); }
+  .f-back{ transform: rotateY(180deg) translateZ(48px); }
+  .f-right{ transform: rotateY(90deg) translateZ(48px); }
+  .f-left{ transform: rotateY(-90deg) translateZ(48px); }
+  .f-top{ transform: rotateX(90deg) translateZ(48px); }
+  .f-bottom{ transform: rotateX(-90deg) translateZ(48px); }
+  /* hide hat overlay on small screens to avoid texture bleed on iOS */
+  .hat { display: none; }
+}
 </style>
 </head>
 <body>
@@ -70,6 +91,7 @@ textarea{min-height:120px;resize:vertical} .notice{font-size:12px;color:#123;opa
       <button class="tab-btn" data-tab="tg">Telegram</button>
       <button class="tab-btn" data-tab="about">О себе</button>
       <button class="tab-btn" data-tab="coop">Сотрудничество</button>
+      <button class="tab-btn" data-tab="server">Мой сервер</button>
     </nav>
   </header>
 
@@ -161,6 +183,14 @@ textarea{min-height:120px;resize:vertical} .notice{font-size:12px;color:#123;opa
         </form>
       </div>
     </section>
+
+    <section class="tab tab-server" hidden>
+      <div class="card">
+        <h3>Мой сервер</h3>
+        <p>Возможно скоро тут будет айпи, а пока мне лень 😴</p>
+      </div>
+    </section>
+
   </main>
 
   <footer class="center" style="margin-top:24px;color:#000a">Сделал сам в майн‑стиле. © 2025 Влад Сковородка</footer>
@@ -169,7 +199,7 @@ textarea{min-height:120px;resize:vertical} .notice{font-size:12px;color:#123;opa
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
-const panels = { home: document.querySelector('.tab-home'), why: document.querySelector('.tab-why'), tg: document.querySelector('.tab-tg'), about: document.querySelector('.tab-about'), coop: document.querySelector('.tab-coop') };
+const panels = { home: document.querySelector('.tab-home'), why: document.querySelector('.tab-why'), tg: document.querySelector('.tab-tg'), about: document.querySelector('.tab-about'), coop: document.querySelector('.tab-coop'), server: document.querySelector('.tab-server') };
 function activate(id){ tabs.forEach(b=>b.classList.toggle('active', b.dataset.tab===id)); for (const k in panels) panels[k].hidden = (k!==id); }
 tabs.forEach(b=> b.addEventListener('click', ()=> activate(b.dataset.tab))); activate('home');
 
