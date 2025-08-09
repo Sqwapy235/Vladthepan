@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Влад Сковородка — TikTok | Minecraft стиль</title>
+<link rel="preconnect" href="https://fonts.cdnfonts.com">
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<style>
+:root{--mc-font:'Minecraft',system-ui,sans-serif;--green-1:#6bbf5b;--green-2:#5aa54c;--green-3:#8bd17b;--border:#1b3a16;}
+*{font-family:var(--mc-font)!important;letter-spacing:.4px} html,body{margin:0;padding:0;height:100%}
+.sky{position:fixed;inset:0;background:linear-gradient(#87ceeb,#78b8e6 60%,var(--green-1) 100%);z-index:-3}
+.clouds::before{content:'';position:fixed;top:10vh;left:10vw;width:160px;height:40px;background:#fff;filter:drop-shadow(20px 10px 0 #fff) drop-shadow(60px 10px 0 #fff) drop-shadow(100px 0 0 #fff) drop-shadow(140px 10px 0 #fff);opacity:.7;z-index:-2}
+.clouds::after{content:'';position:fixed;top:22vh;left:55vw;width:120px;height:30px;background:#fff;filter:drop-shadow(30px 6px 0 #fff) drop-shadow(60px 0 0 #fff);opacity:.6;z-index:-2}
+.ground{position:fixed;left:0;right:0;bottom:0;height:26vh;z-index:-1} .block-row{display:grid;grid-template-columns:repeat(40,minmax(24px,1fr))}
+.block{height:32px;border:1px solid #00000022;image-rendering:pixelated} .grass{background:linear-gradient(#6ac14b 0 0) top/100% 30% no-repeat,linear-gradient(#8b5a2b 0 0) bottom/100% 70% no-repeat,repeating-linear-gradient(45deg,#00000010 0 2px,transparent 2px 4px)}
+.dirt{background:linear-gradient(#7a4b1f,#5e3b18),repeating-linear-gradient(45deg,#00000010 0 2px,transparent 2px 4px);background-blend-mode:multiply}
+.stone{background:linear-gradient(#bfbfbf,#9e9e9e),repeating-linear-gradient(45deg,#00000010 0 2px,transparent 2px 4px);background-blend-mode:multiply}
+.wrap{max-width:1000px;margin:0 auto;padding:12px 12px 60px}
+.header{position:sticky;top:0;background:rgba(90,165,76,.85);border-bottom:3px solid var(--border);display:flex;gap:12px;align-items:center;padding:8px 12px;z-index:10;backdrop-filter:blur(2px)}
+.logo{width:48px;height:48px;border:3px solid var(--border);overflow:hidden;image-rendering:pixelated}
+.site-title{color:#fff;font-size:18px;text-shadow:2px 2px 0 #0006;line-height:1.1}
+.tabs{margin-left:auto;display:flex;gap:8px} .tab-btn{background:var(--green-3);border:3px solid var(--border);padding:8px 12px;font-size:12px;cursor:pointer;box-shadow:0 3px 0 #2c4f24}
+.tab-btn.active{outline:2px solid #0003} .tab-btn:active{transform:translateY(1px);box-shadow:0 2px 0 #2c4f24}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center;margin-top:14px}
+.card{background:#8bd17b;border:4px solid #3b6e34;padding:16px;box-shadow:0 6px 0 #2c4f24}
+/* 3D head */ .stage{perspective:800px;height:360px;position:relative} .head3d{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transform:translate(-50%,-50%);}
+.cube{position:relative;width:120px;height:120px;transform-style:preserve-3d;image-rendering:pixelated}
+.face{position:absolute;width:120px;height:120px;background-image:url('data:image/png;base64,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');background-repeat:no-repeat;image-rendering:pixelated}
+.face{background-size:512px 512px;}
+.f-front{background-position:-64px -64px; transform:translateZ(60px);}
+.f-back{background-position:-192px -64px; transform:rotateY(180deg) translateZ(60px);}
+.f-right{background-position:0px -64px; transform:rotateY(90deg) translateZ(60px);}
+.f-left{background-position:-128px -64px; transform:rotateY(-90deg) translateZ(60px);}
+.f-top{background-position:-64px 0px; transform:rotateX(90deg) translateZ(60px);}
+.f-bottom{background-position:-128px 0px; transform:rotateX(-90deg) translateZ(60px);}
+.hat .face{background-image:url('data:image/png;base64,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');opacity:1}
+.h-front{background-position:-320px -64px; transform:translateZ(62px);}
+.h-back{background-position:-448px -64px; transform:rotateY(180deg) translateZ(62px);}
+.h-right{background-position:-256px -64px; transform:rotateY(90deg) translateZ(62px);}
+.h-left{background-position:-384px -64px; transform:rotateY(-90deg) translateZ(62px);}
+.h-top{background-position:-320px 0px; transform:rotateX(90deg) translateZ(62px);}
+.h-bottom{background-position:-384px 0px; transform:rotateX(-90deg) translateZ(62px);}
+.name-tag{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:#000a;color:#fff;padding:2px 6px}
+.buttons{display:flex;gap:8px;margin-top:8px} .btn{background:#000;color:#fff;border:3px solid var(--border);padding:8px 12px;font-size:12px;display:inline-block;text-decoration:none}
+.btn-blue{background:#1e96ff} .content{margin-top:20px} .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px} .center{text-align:center}
+form.contact{display:grid;gap:10px} input[type=text],input[type=email],textarea{border:3px solid var(--border);padding:10px;font-size:14px;background:#d7f4d0}
+textarea{min-height:120px;resize:vertical} .notice{font-size:12px;color:#123;opacity:.8}
+@media (max-width:800px){.hero{grid-template-columns:1fr} .grid2{grid-template-columns:1fr} .tabs{flex-wrap:wrap} }
+</style>
+</head>
+<body>
+<div class="sky clouds"></div>
+<div class="ground">
+  <div class="block-row"><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div><div class='block grass'></div></div>
+  <div class="block-row"><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div></div>
+  <div class="block-row"><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div><div class='block dirt'></div></div>
+  <div class="block-row"><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div><div class='block stone'></div></div>
+</div>
+<div class="wrap">
+  <header class="header">
+    <div class="logo"><img src="data:image/png;base64,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" alt="skin" style="width:100%;height:100%;object-fit:cover"></div>
+    <div>
+      <div class="site-title">Влад Сковородка — TikTok</div>
+      <a class="btn" href="https://www.tiktok.com/@vladthepan" target="_blank" rel="noreferrer">Открыть TikTok ↗</a>
+    </div>
+    <nav class="tabs">
+      <button class="tab-btn" data-tab="home">Главная</button>
+      <button class="tab-btn" data-tab="why">Зачем канал</button>
+      <button class="tab-btn" data-tab="tg">Telegram</button>
+      <button class="tab-btn" data-tab="about">О себе</button>
+      <button class="tab-btn" data-tab="coop">Сотрудничество</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="stage">
+      <div id="head3d" class="head3d">
+        <div class="cube base">
+          <div class="face f-front"></div>
+          <div class="face f-back"></div>
+          <div class="face f-right"></div>
+          <div class="face f-left"></div>
+          <div class="face f-top"></div>
+          <div class="face f-bottom"></div>
+        </div>
+        <div class="cube hat">
+          <div class="face h-front"></div>
+          <div class="face h-back"></div>
+          <div class="face h-right"></div>
+          <div class="face h-left"></div>
+          <div class="face h-top"></div>
+          <div class="face h-bottom"></div>
+        </div>
+      </div>
+      <div class="name-tag">Sqwapy235</div>
+    </div>
+    <div>
+      <h2 class="site-title" style="font-size:22px;color:#fff;">Добро пожаловать на канал «Влад Сковородка»</h2>
+      <div class="card">
+        <p>Готовлю рецепты, иногда — с лёгким <b>«приветом»</b> и по фану. Здесь мои ссылки, QR на Telegram и зачем я вообще начал.</p>
+        <div class="buttons">
+          <a class="btn" href="https://www.tiktok.com/@vladthepan" target="_blank" rel="noreferrer">Открыть TikTok ↗</a>
+          <a class="btn btn-blue" href="https://t.me/skovorodichi" target="_blank" rel="noreferrer">Telegram канал ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="tab tab-home">
+      <div class="grid2">
+        <div class="card"><h3>Свежие ролики</h3><p>Залетай в TikTok — там все мои эксперименты с рецептами, дегустации и странные (но вкусные) идеи.</p></div>
+        <div class="card"><h3>Куда писать?</h3><p>Самый живой чат и рецепты с подробностями — в Telegram. Открой вкладку «Telegram» для QR‑кода или жми кнопку наверху.</p></div>
+      </div>
+    </section>
+
+    <section class="tab tab-why" hidden>
+      <div class="card"><h3>Почему я создал канал</h3><p>Честно? От скуки начал снимать рецепты. А потом понял, что можно готовить с «приветом» и делать это по приколу. Так и появился мой стиль — смесь нормальных рецептов, мемов и лёгкого безумия.</p></div>
+    </section>
+
+    <section class="tab tab-tg" hidden>
+      <div class="grid2">
+        <div class="card center">
+          <h3>QR‑код Telegram</h3>
+          <div id="qrcode" style="display:inline-block;padding:8px;border:3px solid var(--border);background:#d7f4d0"></div>
+          <p>Наведи камеру — или просто нажми на QR / ссылку:<br><a href="https://t.me/skovorodichi" target="_blank" rel="noreferrer">https://t.me/skovorodichi</a></p>
+        </div>
+        <div class="card">
+          <h3>Что внутри канала?</h3>
+          <ul>
+            <li>Подробные рецепты из роликов;</li>
+            <li>Анонсы и закулисье съёмок;</li>
+            <li>Опросы на следующий ролик;</li>
+            <li>Немного мемов — куда без них.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab tab-about" hidden>
+      <div class="card">
+        <h3>О себе</h3>
+        <p>Меня зовут Влад, мне 19 и я долбаеб, ой то есть СУХАРИКИИИ 😅</p>
+        <p>А ну ещё я шарагу на красный диплом окончил и я программист.</p>
+      </div>
+    </section>
+
+    <section class="tab tab-coop" hidden>
+      <div class="card">
+        <h3>Сотрудничество</h3>
+        <p>Напиши мне прямо отсюда — заявка прилетит в мой личный кабинет.</p>
+        <form class="contact" method="POST" action="https://formspree.io/f/xpwlkwaz">
+          <input type="text" name="name" placeholder="Имя" required>
+          <input type="email" name="email" placeholder="Email для связи" required>
+          <input type="text" name="topic" placeholder="Тема">
+          <textarea name="message" placeholder="Сообщение" required></textarea>
+          <input type="hidden" name="_subject" value="Заявка на сотрудничество с сайта Влад Сковородка">
+          <button class="btn" type="submit">Отправить</button>
+          <div class="notice">Если форма не работает — напиши в Telegram: <a href="https://t.me/skovorodichi" target="_blank" rel="noreferrer">https://t.me/skovorodichi</a></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="center" style="margin-top:24px;color:#000a">Сделал сам в майн‑стиле. © 2025 Влад Сковородка</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const panels = { home: document.querySelector('.tab-home'), why: document.querySelector('.tab-why'), tg: document.querySelector('.tab-tg'), about: document.querySelector('.tab-about'), coop: document.querySelector('.tab-coop') };
+function activate(id){ tabs.forEach(b=>b.classList.toggle('active', b.dataset.tab===id)); for (const k in panels) panels[k].hidden = (k!==id); }
+tabs.forEach(b=> b.addEventListener('click', ()=> activate(b.dataset.tab))); activate('home');
+
+const head3d = document.getElementById('head3d');
+function onMove(e){ const r=head3d.getBoundingClientRect(); const cx=r.left+r.width/2, cy=r.top+r.height/2;
+  const dx=(e.clientX-cx)/r.width, dy=(e.clientY-cy)/r.height; const ry=Math.max(-1,Math.min(1,dx))*20; const rx=Math.max(-1,Math.min(1,-dy))*14;
+  head3d.style.transform = `translate(-50%,-50%) rotateX(${rx}deg) rotateY(${ry}deg)`; }
+if (matchMedia('(pointer:fine)').matches) window.addEventListener('mousemove', onMove);
+else { let a=0; setInterval(()=>{ a+=0.8; head3d.style.transform=`translate(-50%,-50%) rotateY(${a}deg)`; }, 40); }
+
+new QRCode(document.getElementById('qrcode'), { text: "https://t.me/skovorodichi", width: 220, height: 220, correctLevel: QRCode.CorrectLevel.M });
+</script>
+</body>
+</html>
